@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Dashboard</title>
+  <style>
+    /* CSS Styles for the Dark Theme */
+    body {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .dashboard {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .logout-btn {
+      background-color: #ff4d4d;
+      color: #ffffff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+        
+    }
+
+    .logout-btn:hover {
+      background-color: #cc0000;
+    }
+
+    .welcome {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .link-section {
+      padding: 20px;
+      background-color: #333333;
+      border-radius: 8px;
+    }
+
+    .link-section a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .link-section a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard">
+    <div class="header" style="display: inline-block;"> 
+      <h1 >  Welcome </h1> 
+      <h1 style="color: #cc0000;"><%= username %> </h1>
+      <form action="/logout" method="post">
+        <button class="logout-btn" >Logout</button>
+      </form>
+    </div>
+    <div class="welcome">
+    
+    </div>
+    Your Link to News API
+    <div class="link-section">
+      <a href="#">dh</a>
+   
+      <!-- Add more API links as needed -->
+    </div>
+  </div>
+
+  
+</body>
+
+</html>

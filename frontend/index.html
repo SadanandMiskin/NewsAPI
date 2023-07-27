@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>NewsAPI</title>
+
+  <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Great+Vibes&family=Inter:wght@700&family=Kanit:wght@500&family=Kaushan+Script&family=Nunito:wght@800;900&family=Oswald:wght@700&family=Prompt:wght@800&display=swap');
+  
+    *{
+      font-family: 'adobe-clean', 'Adobe Clean', 'Trebuchet MS', sans-serif ; 
+     
+      
+    }
+  
+    nav.custom_nav-container .navbar-nav .nav-link {
+      color: #000000; /* Replace #000000 with your desired font color */
+    }
+  
+    /* Change font color of the active navbar link */
+    nav.custom_nav-container .navbar-nav .nav-item.active .nav-link {
+      color: #000000; /* Replace #000000 with your desired font color for the active link */
+    }
+  
+    body{cursor: url("https://downloads.totallyfreecursors.com/cursor_files/ddr8.ani"), url("https://downloads.totallyfreecursors.com/thumbnails/ddr8.gif"), auto;}
+    .slider_section{
+      background: url('images/background.gif');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  
+    input[type="text"], textarea {
+  
+  background-color : #dad3d3; 
+  
+  }
+  @media (max-width: 706px){
+.col-lg-43 {
+  display: flex;
+  justify-content: center;
+}
+  }
+  .btn-box .btn-1 {
+      background-color: black; /* Button background color */
+      color: white; /* Button text color */
+      border: 2px solid white; /* Button border */
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition on hover */
+    }
+  
+    .btn-box .btn-1:hover {
+      background-color: white; /* Button background color on hover */
+      color: black; /* Button text color on hover */
+      border: 2px solid white; /* Button border on hover */
+    }
+  
+    /* Style for "Contact Us" button */
+    .btn-box .btn-2 {
+      background-color: white; /* Button background color */
+      color: black; /* Button text color */
+      transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+    }
+  
+    .btn-box .btn-2:hover {
+      background-color: black; /* Button background color on hover */
+      color: white; /* Button text color on hover */
+    }
+  .image-container {
+      white-space: nowrap;
+      overflow: hidden;
+  }
+  
+  .image-container img {
+      width: 700px; /* Set your desired image width */
+      height: auto;
+      margin: 5px; /* Add some margin between images */
+      display: inline-block;
+      animation: scrollImages 20s linear infinite;
+  }
+  
+  @keyframes scrollImages {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(calc(-100% - 9px)); /* Adjust the value based on image width and spacing */
+      }
+  }
+  
+  /* Adjust the translateX for desktop screens (min-width: 768px) */
+  @media screen and (min-width: 768px) {
+      .image-container img {
+          animation: scrollImagesDesktop 20s linear infinite;
+      }
+  }
+  
+  @keyframes scrollImagesDesktop {
+      0% {
+          transform: translateX(0);
+      }
+      100% {
+          transform: translateX(calc(-50% - 5px)); /* Adjust the value based on image width and spacing */
+      }
+  }
+
+  </style>
+
+
+
+
+  <div class="hero_area" style="background-color: #ffffff; color: black;">
+    <!-- header section strats -->
+    <header class="header_section" >
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container " >
+          <a class="navbar-brand" href="index.html">
+            <span style="color: black;">NewsAPI</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: black; padding: 0  0 2px;">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav  ml-auto" style="color: black;">
+              <li class="nav-item active">
+                <a class="nav-link" href="/" style="color: black;">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login" style="color: black;"> Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register" style="color: black;">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/" style="color: black;">API Usage</a>
+              </li>
+             
+            </ul>
+            <div class="quote_btn-container">
+              <form class="form-inline">
+                <button class="btn   nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <div data-aos="fade-up">
+                    <h1 style="font-weight: bolder; font-size: 50px;">
+                      Discover a Wealth of Knowledge: <br>
+                      300+ News Articles at Your Disposal!
+                    </h1>
+                  </div>
+                    <p>
+                      Access a treasure trove of information with just one API call - over 400 news articles at your fingertips! </p>
+                    <div class="btn-box">
+                      <a href="/register" class="btn-1" style="width: 350px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 2px solid white; padding: 10px 20px; text-decoration: none; display: inline-block; transition: background-color 0.3s, color 0.3s, border-color 0.3s;" onmouseover="this.style.backgroundColor='black'; this.style.color='white'; this.style.borderColor='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black'; this.style.borderColor='black';">Get Started</a>
+                  
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class=" col-lg-10 mx-auto">
+                      <div class="img-box">
+                        <div style="width:100%;height: 50px;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMSxuwzMm2T5byg" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/season-14-the-simpsons-14x7-xT5LMSxuwzMm2T5byg"></a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <div data-aos="fade-up">
+                      <h1 style="font-weight: bolder; font-size: 50px;">
+                        Discover a Wealth of Knowledge: <br>
+                      300+ News Articles at Your Disposal!
+                      </h1>
+                    </div>
+                    <p>
+                      Access a treasure trove of information with just one API call - over 400 news articles at your fingertips! </p>
+                    <div class="btn-box">
+                      <a href="/register" class="btn-1" style="width: 350px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 2px solid white; padding: 10px 20px; text-decoration: none; display: inline-block; transition: background-color 0.3s, color 0.3s, border-color 0.3s;" onmouseover="this.style.backgroundColor='black'; this.style.color='white'; this.style.borderColor='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black'; this.style.borderColor='black';">Get Started</a>
+                   
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class=" col-lg-10 mx-auto">
+                      <div class="img-box">
+                        <div style="width:100%;height: 50px;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMSxuwzMm2T5byg" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/season-14-the-simpsons-14x7-xT5LMSxuwzMm2T5byg"></a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <div data-aos="fade-up">
+                      <h1 style="font-weight: bolder; font-size: 50px;">
+                        Discover a Wealth of Knowledge: <br>
+                        300+ News Articles at Your Disposal!
+                      </h1>
+                    </div>
+                    <p>
+                      Access a treasure trove of information with just one API call - over 400 news articles at your fingertips! </p>
+                    <div class="btn-box">
+                      <a href="/register" class="btn-1" style="width: 350px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 2px solid white; padding: 10px 20px; text-decoration: none; display: inline-block; transition: background-color 0.3s, color 0.3s, border-color 0.3s;" onmouseover="this.style.backgroundColor='black'; this.style.color='white'; this.style.borderColor='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black'; this.style.borderColor='black';">Get Started</a>
+                   
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class=" col-lg-10 mx-auto">
+                      <div class="img-box">
+                        <div style="width:100%;height: 50px;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMSxuwzMm2T5byg" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/season-14-the-simpsons-14x7-xT5LMSxuwzMm2T5byg"></a></p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section> 
+  
+    <!-- end slider section -->
+  </div>
+
+
+  <section>
+   <div class="container" style="padding-top: 50px;">
+    <div class="heading_container heading_center">
+      <h2>
+        News papers
+      </h2>
+    </div>
+    <div class="image-container">
+      <img src="images/banner.png">
+      <img src="images/banner.png">
+      <img src="images/banner.png">
+      
+    </div>
+   </div>
+  </section>
+  <!-- service section -->
+  
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Features
+        </h2>
+      </div>
+    </div>
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/s1.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Easy to use
+              </h4>
+              <p>access the latest news from various sources and categories with a simple API call.
+               
+              </p>
+              <a href="">
+                
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/s2.png" alt="" style="color: black">
+            </div>
+            <div class="detail-box">
+              <h4>
+               Your Preferred news
+              </h4>
+              <p>
+                Easily sort and customize the news results and data according to your basis and preferences.
+              </p>
+              <a href="">
+                
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/s3.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h4>
+                Get Rich Data
+              </h4>
+              <p>
+                get rich metadata such as headlines, images, summaries, authors, dates, keywords and more for each news article.
+              </p>
+              <a href="">
+              
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+<div class="container" >
+  <div class="heading_container heading_center">
+    <h2>
+      Usage
+    </h2>
+      <div class="box " >
+        <div class="img-box">
+          <img src="images/usage1.png" alt="" >
+        </div>
+        <div class="detail-box" >
+          <h4>
+            Get news articles
+          </h4>
+          <p>
+            For news from all the sources, use /news route with your id provided.
+          </p>
+          <img src="images/usage2.png" alt="" style="width: 450px; height: 300px; " >
+          <a href="">
+          
+
+  
+          </a>
+        </div>
+      </div>
+<hr>
+      <div class="box " >
+        <div class="img-box">
+          <img src="images/usage3.png" alt="" >
+        </div>
+        <div class="detail-box" >
+          <h4>
+            Get news articles of your preferred <source>
+          </h4>
+          <p>
+            specify the source.
+            For example: 
+            <b>/news/zeenews</b> displays news from ZeeNews
+          </p>
+          <img src="images/usage4.png" alt="" style="width: 450px; height: 300px; " >
+          <a href="">
+          
+            
+  
+          </a>
+        </div>
+      </div>
+    
+  </div>
+
+  <div class="col-md-6 col-lg-43 "  style=" position: relative;left: 200px; max-width: 780px;" >
+    
+  </div>
+
+  <hr>
+    
+  <div class="col-md-6 col-lg-43 "  style=" position: relative;left: 200px; max-width: 780px;" >
+   
+  </div>
+
+</div>
+
+
+
+
+<hr>
+
+<div class="container" >
+  <div class="heading_container heading_center">
+    <h2>
+      Source
+    </h2>
+    <h4>
+      ZeeNews -> /zeenews<source><br>
+      Hindustan Times -> /hindustantimes<source><br>
+      The Hindu -> /thehindu<source><br>
+      Indian Express -> /indianexpress<source><br>
+      Dainik Bhaskar -> /dainikbhaskar<source><br>
+    </h4>
+    
+  </div>
+  <div class="col-md-6 col-lg-43 "  style=" position: relative;left: 200px; max-width: 780px;" >
+    <div class="box " >
+      
+      <div class="detail-box" >
+        
+      </div>
+    </div>
+  </div>
+
+  <hr>
+    
+  <div class="col-md-6 col-lg-43 "  style=" position: relative;left: 200px; max-width: 780px;" >
+    <div class="box " >
+      <div class="img-box">
+        
+      </div>
+      <div class="detail-box" >
+        
+        
+        <a href="">
+        
+          
+
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<hr>
+
+  <!-- contact section -->
+  
+  
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row" >
+        
+        
+        <div class="col-md-3">
+          <div class="info_detail">
+            <h4>
+              NewsAPI
+            </h4>
+            <p>
+             Provides over 800+ News articles using REST APIs
+            </p>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+
+  <!-- footer section -->
+  
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <script src="bower_components/aos/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 120, 
+  delay: 0, 
+  duration: 700, 
+  easing: 'ease',
+  once: false, 
+  mirror: false, 
+  anchorPlacement: 'top-bottom',
+    });
+  </script>
+</body>
+
+</html>
