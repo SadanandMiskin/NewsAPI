@@ -3,6 +3,7 @@ const UserModel = require('./models/user')
 const dbconnect = require('./config/db')
 const google = require('./models/googleSignIn')
 
+const PORT = process.env.PORT || 3000
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -239,7 +240,7 @@ app.post('/logout', (req,res)=>{
 })
 
 dbconnect.then(
-    app.listen(3000,()=>{
+    app.listen(PORT,()=>{
         console.log('listening')
     })
     
