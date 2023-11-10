@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt')
 require('dotenv').config()
 const mongoose = require('mongoose')
 const session = require('express-session')
-const mongoDbSession = require('connect-mongodb-session')(session)  //inclused the express session function and when this is called , it will store in mongodb
+// const mongoDbSession = require('connect-mongodb-session')(session)  //inclused the express session function and when this is called , it will store in mongodb
 const path = require('path')
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -32,18 +32,18 @@ function countUsers () {
 
 }
 
-var store = new mongoDbSession({
-    uri: process.env.MONGO_URI,
-    collection: 'Sessions',
+// var store = new mongoDbSession({
+//     uri: process.env.MONGO_URI,
+//     collection: 'Sessions',
 
 
-})
+// })
 
 app.use(session({
     secret: 'hello wtsup',
     resave: false, //creating new session for every browser
     saveUninitialized: false, //dont want to save the session
-    store: store,
+    // store: store,
     
 }))
 
