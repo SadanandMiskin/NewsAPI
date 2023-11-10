@@ -50,67 +50,67 @@ app.use(session({
 
 //google sign-in 
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-// Serialize and deserialize user for sessions
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
+// // Serialize and deserialize user for sessions
+// passport.serializeUser((user, done) => {
+//   done(null, user.id);
+// });
 
-passport.deserializeUser(async (id, done) => {
- try{
-    const usr = await google.findById(id);
-    done(null,usr)
- }
- catch(err){
-    console.log(err)
- }
-});
+// passport.deserializeUser(async (id, done) => {
+//  try{
+//     const usr = await google.findById(id);
+//     done(null,usr)
+//  }
+//  catch(err){
+//     console.log(err)
+//  }
+// });
 
-var name
+// var name
 
-// Set up Google Strategy
-passport.use(new GoogleStrategy({
-  clientID: process.env.clientId,
-  clientSecret: process.env.clientSecret,
-  callbackURL: '/auth/google/callback', // Change this URL to match your application's callback URL
-},
-async (accessToken, refreshToken, profile, done) => {
-    try {
-        let user = await google.findOne({ googleId: profile.id });
-        name = profile.displayName
-        if (!user) {
-          // If the user doesn't exist, create a new user
+// // Set up Google Strategy
+// passport.use(new GoogleStrategy({
+//   clientID: process.env.clientId,
+//   clientSecret: process.env.clientSecret,
+//   callbackURL: '/auth/google/callback', // Change this URL to match your application's callback URL
+// },
+// async (accessToken, refreshToken, profile, done) => {
+//     try {
+//         let user = await google.findOne({ googleId: profile.id });
+//         name = profile.displayName
+//         if (!user) {
+//           // If the user doesn't exist, create a new user
           
-          user = new google({
-            username: profile.displayName,
-            // email: profile.emails, // Save the Google email in the email field
-            googleId: profile.id,
-          });
+//           user = new google({
+//             username: profile.displayName,
+//             // email: profile.emails, // Save the Google email in the email field
+//             googleId: profile.id,
+//           });
           
-          await user.save();
-        }
+//           await user.save();
+//         }
     
-        return done(null, user);
-      } catch (err) {
-        return done(err);
-      }
-  }
-));
+//         return done(null, user);
+//       } catch (err) {
+//         return done(err);
+//       }
+//   }
+// ));
 
-// Create routes for login with Google
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+// // Create routes for login with Google
+// app.get('/auth/google',
+//   passport.authenticate('google', { scope: ['profile'] }));
 
-app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  (req, res) => {
-    // Successful authentication, redirect to dashboard or homepage
-    req.session.isAUth = true
-    countUsers()
-    res.redirect('/dashboard');
-  });
+// app.get('/auth/google/callback',
+//   passport.authenticate('google', { failureRedirect: '/login' }),
+//   (req, res) => {
+//     // Successful authentication, redirect to dashboard or homepage
+//     req.session.isAUth = true
+//     countUsers()
+//     res.redirect('/dashboard');
+//   });
 
 
 
