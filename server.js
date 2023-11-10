@@ -1,7 +1,7 @@
 const api = require('./fetch/api')
 const UserModel = require('./models/user')
 const dbconnect = require('./config/db')
-const google = require('./models/googleSignIn')
+// const google = require('./models/googleSignIn')
 
 const PORT = process.env.PORT || 3000
 

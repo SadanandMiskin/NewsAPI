@@ -14,10 +14,9 @@ const userSchema = new mongoose.Schema({
             type: String,
             
         },
-        googleId:{
-            type: String
-        }
-})
+        googleId:String,
+        
+}, {collection: 'newsApiUsers'})
 
 const User = mongoose.model('User', userSchema)
 module.exports = User
