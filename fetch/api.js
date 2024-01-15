@@ -4,7 +4,6 @@ const cheerio = require('cheerio')
 
 const app = express()
 
-
 var articles = []
 var date = new Date()
  
