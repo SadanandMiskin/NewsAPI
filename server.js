@@ -1,9 +1,9 @@
 const api = require('./fetch/api')
-const UserModel = require('./models/user')
-const dbconnect = require('./config/db')
+// const UserModel = require('./models/user')
+// const dbconnect = require('./config/db')
 // const google = require('./models/googleSignIn')
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -128,11 +128,12 @@ const isAUth = (req,res,next)=>{
 
 
 
-app.get('/',(req,res)=>{
+app.get('/',api,(req,res)=>{
     // req.session.isAuth = true //A session will be created if set true
     // console.log(req.session)
     // console.log(req.session.id)
-   res.redirect('/news')
+    const {articles} = req
+    res.json(articles)
     
 })
 
@@ -239,9 +240,9 @@ app.post('/logout', (req,res)=>{
 
 })
 
-dbconnect.then(
+
     app.listen(PORT,()=>{
         console.log('listening')
     })
     
-)
+
