@@ -132,7 +132,7 @@ app.get('/',(req,res)=>{
     // req.session.isAuth = true //A session will be created if set true
     // console.log(req.session)
     // console.log(req.session.id)
-   res.sendFile(__dirname + '/frontend/index.html')
+   res.redirect('/news')
     
 })
 
