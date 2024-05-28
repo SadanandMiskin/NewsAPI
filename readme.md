@@ -1,11 +1,10 @@
 
 # NewsAPI
-
-- Live link - https://real-gray-anemone-belt.cyclic.app
+News Articles from various sources
   
 ## Overview 
 - Fetches news articles from various news providers and displays as JSON - API
-- A total of 380+ news articles api
+- A total of 1000+ news articles api
 
 ## Structure of news api fetched
 
